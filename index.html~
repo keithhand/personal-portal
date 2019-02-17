@@ -6,8 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script> 
-	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-	<script src="js/main.js"></script> 
+        <script src="js/main.js"></script> 
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body>
