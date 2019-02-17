@@ -5,13 +5,13 @@ html, body {
     padding-top: 20%;
 }
 body,
-#txt,
+#search-field,
 #hide{
     font:inherit;
     margin:0;
     padding:0;
 }
-#txt{
+#search-field{
     border:none;
     color:#888;
     min-width:10px;
@@ -23,4 +23,7 @@ body,
 #hide{
     display:none;
     white-space:pre;
+}
+body{
+    background-image=url("https://source.unsplash.com/random/");
 }
