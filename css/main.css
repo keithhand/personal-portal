@@ -2,7 +2,7 @@ html, body {
     height: 100%;
     background-color: black;
 }
-.container {
+.container-fluid {
     padding-top: 15%;
 }
 body,
@@ -14,7 +14,6 @@ body,
 }
 #search-field{
     border:none;
-    color:#888;
     min-width:10px;
     padding-top: 10px; 
     padding-bottom: 10px;
@@ -22,11 +21,11 @@ body,
     padding-right: 2px;
     background-color: gray;
     color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 #hide{
     display:none;
     white-space:pre;
-}
-body{
-    background-image=url("https://source.unsplash.com/random/");
 }
