@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+}
+.container {
+    padding-top: 20%;
+}
+body,
+#txt,
+#hide{
+    font:inherit;
+    margin:0;
+    padding:0;
+}
+#txt{
+    border:none;
+    color:#888;
+    min-width:10px;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    padding-left: 4px;
+    padding-right: 2px;
+}
+#hide{
+    display:none;
+    white-space:pre;
+}
