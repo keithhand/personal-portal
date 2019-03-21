@@ -1,0 +1,26 @@
+# ./docker-compose.yml
+
+version: '2'
+
+services:
+  db:
+    image: hypriot/rpi-mysql
+    container_name: portal_db
+    environment:
+      MYSQL_ROOT_PASSWORD: databasebudotpf5rootpassword
+      MYSQL_DATABASE: portal_db
+      MYSQL_USER: portal_db
+      MYSQL_PASSWORD: lkd9uo9edatabasepassword
+    ports:
+      - "9906:3306"
+
+  
+  web:
+    image: kafebob/rpi-php-apache:5.6
+    container_name: portal_web
+    depends_on:
+      - db
+    volumes:
+      - ../..:/var/www/html/
+    ports:
+      - "8080:80"
