@@ -4,7 +4,8 @@ version: '2'
 
 services:
   db:
-    image: mysql:5.7
+    image: hypriot/rpi-mysql
+    container_name: portal_db
     environment:
       MYSQL_ROOT_PASSWORD: databasebudotpf5rootpassword
       MYSQL_DATABASE: portal_db
@@ -12,14 +13,14 @@ services:
       MYSQL_PASSWORD: lkd9uo9edatabasepassword
     ports:
       - "9906:3306"
+
+  
   web:
-    image: portal-db:hyperiot/rpi-mysql
-    container_name: php_web
+    image: kafebob/rpi-php-apache:5.6
+    container_name: portal_web
     depends_on:
       - db
     volumes:
       - ..:/var/www/html/
     ports:
-      - "8100:80"
-    stdin_open: true
-    tty: true
+      - "8080:80"
