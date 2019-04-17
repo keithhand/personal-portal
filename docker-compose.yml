@@ -8,6 +8,8 @@ services:
     volumes:
       - ./public_html/:/var/www/html/
     restart: always
+    env_file:
+      - .env
   apache:
     container_name: personal-portal-apache
     build: './apache/'
@@ -27,8 +29,8 @@ services:
     image: mysql:5.6.40
     networks:
       - backend
-    environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
+    env_file:
+      - .env
     restart: always
 networks:
   frontend:
