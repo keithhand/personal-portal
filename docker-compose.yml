@@ -3,35 +3,22 @@ services:
   php:
     container_name: personal-portal-php
     build: './php/'
-    networks:
-      - backend
     volumes:
       - ./public_html/:/var/www/html/
     restart: always
-    env_file:
-      - .env
   apache:
     container_name: personal-portal-apache
     build: './apache/'
     depends_on:
       - php
-      - mysql
-    networks:
-      - frontend
-      - backend
-    ports:
-      - "8080:80"
     volumes:
       - ./public_html/:/var/www/html/
-    restart: always
-  mysql:
-    container_name: personal-portal-mysql
-    image: mysql:5.6.40
-    networks:
-      - backend
-    env_file:
-      - .env
+    environment:
+      - VIRTUAL_HOST=app.hand.technology
+      - LETSENCRYPT_HOST=app.hand.technology
+      - LETSENCRYPT_EMAIL=keith@hand.technology
     restart: always
 networks:
-  frontend:
-  backend:
+  default:
+    external:
+      name: webproxy
