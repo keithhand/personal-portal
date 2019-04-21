@@ -15,8 +15,8 @@ services:
       - ./public_html/:/var/www/html/
     environment:
       - VIRTUAL_HOST=app.hand.technology
-      - LETSENCRYPT_HOST=app.hand.technology
-      - LETSENCRYPT_EMAIL=keith@hand.technology
+#      - LETSENCRYPT_HOST=app.hand.technology
+#      - LETSENCRYPT_EMAIL=keith@hand.technology
     restart: always
 networks:
   default:
